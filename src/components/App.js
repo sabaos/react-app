@@ -1,8 +1,10 @@
 import logo from '../assets/images/logo.svg';
 import '../assets/styles/App.css';
-import Person from './person';
-import {sum, pi, imeAplikacije as mojaVarijabla } from './utility';
+//import { mojaVarijabla } from './utilities';
+//import Person from './utilities/person';
+//import {sum, pi, imeAplikacije as mojaVarijabla } from './utilities/utility';
 import randomstring from 'randomstring'; 
+import {mojaVarijabla, num1, num2, pi, Osoba, sum, } from './utilities'
 
 function App() {
   var zbroj = sum(10, 12) * pi;
@@ -27,7 +29,7 @@ function App() {
 
         </a>
         <p>
-        {mojaVarijabla}, {rndStr},  {Person.name}, {zbroj}, Godine: {Person.godine}
+        {mojaVarijabla}, {rndStr},  {Osoba.name}, {zbroj}, Godine: {Osoba.godine}
       </p>
       </header>
       
