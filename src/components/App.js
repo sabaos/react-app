@@ -6,6 +6,14 @@ import '../assets/styles/App.css';
 import randomstring from 'randomstring'; 
 import {mojaVarijabla, num1, num2, pi, Osoba, sum, oduzmi, } from './utilities'
 
+// 5.5
+import {Komponenta1} from './utilities/Komponenta1';
+import {Komponenta2} from './utilities/Komponenta2';
+import Komponenta3 from './utilities/Komponenta3';
+
+var prva ="PRVI TEKST";
+var druga= "DRUGI TEXT"
+
 function App() {
   var zbroj = sum(10, 12) * pi;
 
@@ -37,6 +45,10 @@ function App() {
         oduzimanje {od}
       </p>
       </header>
+      <p>komponenta 1</p>
+      <Komponenta1/><br/>
+      <Komponenta2 podatak1={prva}/>
+      <Komponenta3 podatak1={prva} podatak2={druga}/>
       
     </div>    
   );
