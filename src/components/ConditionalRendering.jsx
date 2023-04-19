@@ -11,8 +11,8 @@ export function ConditionalRendering ({props}){
 
     return(
         <div>
-            {isVeci && <p>Broj je veći od 10 -> ({props}) </p>}
-            {!isVeci && <p>Broj je manji od 10 -> ({props})</p>}
+            {isVeci && <p>Broj je veći od 10 -{">"} ({props}) </p>}
+            {!isVeci && <p>Broj je manji od 10 -{">"} ({props})</p>}
         </div>
     );
 }

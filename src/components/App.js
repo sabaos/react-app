@@ -14,6 +14,27 @@ import Komponenta3 from './Komponenta3';
 //5.6
 import {GlavnaKomponenta} from './GlavnaKomponenta'
 
+//5.7 - import
+import React from 'react';
+//5.7 
+// - funkcija
+function WelcomeFunkcija(){
+  return (
+    <h2>
+      Welcome! Komponenta definirana funkcijom!
+    </h2>
+  )
+}
+// - klasa
+
+class WellcomeKlasa extends React.Component{
+  render(){
+    return(
+      <h1> Welcome! komponenta definirana klasom.</h1>
+    );
+  }
+}
+
 var prva ="PRVI TEKST";
 var druga= "DRUGI TEXT"
 
@@ -55,6 +76,8 @@ function App() {
 
       <GlavnaKomponenta/>
       
+      <WelcomeFunkcija/>
+      <WellcomeKlasa/>
     </div>    
   );
 }
