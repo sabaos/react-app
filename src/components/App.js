@@ -7,9 +7,12 @@ import randomstring from 'randomstring';
 import {mojaVarijabla, num1, num2, pi, Osoba, sum, oduzmi, } from './utilities'
 
 // 5.5
-import {Komponenta1} from './utilities/Komponenta1';
-import {Komponenta2} from './utilities/Komponenta2';
-import Komponenta3 from './utilities/Komponenta3';
+import {Komponenta1} from './Komponenta1';
+import {Komponenta2} from './Komponenta2';
+import Komponenta3 from './Komponenta3';
+
+//5.6
+import {GlavnaKomponenta} from './GlavnaKomponenta'
 
 var prva ="PRVI TEKST";
 var druga= "DRUGI TEXT"
@@ -49,6 +52,8 @@ function App() {
       <Komponenta1/><br/>
       <Komponenta2 podatak1={prva}/>
       <Komponenta3 podatak1={prva} podatak2={druga}/>
+
+      <GlavnaKomponenta/>
       
     </div>    
   );
