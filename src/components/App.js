@@ -18,6 +18,7 @@ import {GlavnaKomponenta} from './GlavnaKomponenta'
 import React from 'react';
 import KorisnikKlasa from './KorisnikKlasa';
 import KorisnikFunkcija from './KorisnikFunkcija';
+import KorisnikChild from './KorisnikChild';
 //5.7 
 // - funkcija
 function WelcomeFunkcija(){
@@ -41,7 +42,8 @@ function WelcomeFunkcija(){
 const korisnici = [
   {ime: "Marko", godine: 22},
   {ime: "Katarina", godine: 21},
-  {ime: "Nataša", godine: 20}
+  {ime: "Nataša", godine: 20},
+  {ime: "Sunčica", godine: 7}
 ]
 
 class App extends React.Component {
@@ -94,7 +96,13 @@ class App extends React.Component {
       <KorisnikKlasa ime={korisnici[1].ime} godine={korisnici[1].godine}/>
       
       <KorisnikFunkcija ime={korisnici[2].ime} godine={korisnici[2].godine}/>
-    </div>);
+
+      <KorisnikChild ime = {korisnici[3].ime} godine={korisnici[3].godine} godina>
+        Ona voli plivati</KorisnikChild> 
+
+      
+      </div>
+      );
  } 
 }
 
