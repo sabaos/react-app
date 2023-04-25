@@ -48,12 +48,13 @@ class App extends React.Component {
       {ime: "Katarina", godine: 21},
       {ime: "Nataša", godine: 20},
       {ime: "Sunčica", godine: 7}
-  ]
-  }
+  ],
+  dodatni_tekst : "Ona voli plivati"
+  };
   
   render(){
 
-    const{korisnici} =this.state
+    const{korisnici, dodatni_tekst} =this.state
 
   var prva ="PRVI TEKST";
   var druga= "DRUGI TEXT"
@@ -102,7 +103,8 @@ class App extends React.Component {
       <KorisnikFunkcija ime={korisnici[2].ime} godine={korisnici[2].godine}/>
 
       <KorisnikChild ime = {korisnici[3].ime} godine={korisnici[3].godine} godina>
-        Ona voli plivati</KorisnikChild> 
+        {dodatni_tekst}
+        </KorisnikChild> 
 
       
       </div>
