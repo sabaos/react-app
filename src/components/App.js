@@ -39,17 +39,21 @@ function WelcomeFunkcija(){
 // }
 
 
-const korisnici = [
-  {ime: "Marko", godine: 22},
-  {ime: "Katarina", godine: 21},
-  {ime: "Nataša", godine: 20},
-  {ime: "Sunčica", godine: 7}
-]
 
 class App extends React.Component {
   
+  state = {
+    korisnici : [
+      {ime: "Marko", godine: 22},
+      {ime: "Katarina", godine: 21},
+      {ime: "Nataša", godine: 20},
+      {ime: "Sunčica", godine: 7}
+  ]
+  }
   
   render(){
+
+    const{korisnici} =this.state
 
   var prva ="PRVI TEKST";
   var druga= "DRUGI TEXT"
