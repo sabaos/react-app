@@ -16,6 +16,8 @@ import {GlavnaKomponenta} from './GlavnaKomponenta'
 
 //5.7 - import
 import React from 'react';
+import KorisnikKlasa from './KorisnikKlasa';
+import KorisnikFunkcija from './KorisnikFunkcija';
 //5.7 
 // - funkcija
 function WelcomeFunkcija(){
@@ -27,18 +29,28 @@ function WelcomeFunkcija(){
 }
 // - klasa
 
-class WellcomeKlasa extends React.Component{
+// class WellcomeKlasa extends React.Component{
+//   render(){
+//     return(
+//       <h1> Welcome! komponenta definirana klasom.</h1>
+//     );
+//   }
+// }
+
+
+const korisnici = [
+  {ime: "Marko", godine: 22},
+  {ime: "Katarina", godine: 21},
+  {ime: "Nataša", godine: 20}
+]
+
+class App extends React.Component {
+  
+  
   render(){
-    return(
-      <h1> Welcome! komponenta definirana klasom.</h1>
-    );
-  }
-}
 
-var prva ="PRVI TEKST";
-var druga= "DRUGI TEXT"
-
-function App() {
+  var prva ="PRVI TEKST";
+  var druga= "DRUGI TEXT"
   var zbroj = sum(10, 12) * pi;
 
   var rndStr = randomstring.generate({
@@ -77,9 +89,13 @@ function App() {
       <GlavnaKomponenta/>
       
       <WelcomeFunkcija/>
-      <WellcomeKlasa/>
-    </div>    
-  );
+      {/* <WellcomeKlasa/> */}
+      <KorisnikKlasa ime={korisnici[0].ime} godine={korisnici[0].godine}/>
+      <KorisnikKlasa ime={korisnici[1].ime} godine={korisnici[1].godine}/>
+      
+      <KorisnikFunkcija ime={korisnici[2].ime} godine={korisnici[2].godine}/>
+    </div>);
+ } 
 }
 
 export default App;
