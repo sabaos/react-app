@@ -11,7 +11,10 @@ import './index.css';
 //import AppForme2 from './components/AppForme2';
 
 //nasa API import
-import AppAPI from './components/utilities/AppAPI';
+//import AppAPI from './components/utilities/AppAPI';
+import AppGraphQl from './components/AppGraphQl';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<AppForme2/>);
-root.render(<AppAPI/>);
+//root.render(<AppAPI/>);
+root.render(<AppGraphQl/>)
