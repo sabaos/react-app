@@ -10,7 +10,7 @@ export default function AppAPI() {
     if (!data){
             return<div>Loading NASA Data</div>
     }
-    const {title, url, explanation, copyright, hdurl} = data;
+    const {title, url, explanation, copyright, hdurl} =data;
 return (
     <div>
         <h1>NASA picture of the day</h1>
@@ -23,3 +23,6 @@ return (
 )
 
 }
+
+
+
