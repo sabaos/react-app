@@ -1,10 +1,12 @@
-export default function KorisnikFunkcija({ime, godine}) {
-    
+export default function KorisnikFunkcija({ime, godine, onNameChange}) {
     return (
         <div>
-            <p>
-                {ime} je legenda i ima {godine} godina!
-            </p>
+            <p>Zadatak 11: Moje ime je {ime} i imam {godine} godine</p>
+            <input 
+                type="text"
+                value={ime}
+                onChange={onNameChange}
+            />
         </div>
-    )
+    );
 }

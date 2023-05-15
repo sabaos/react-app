@@ -1,115 +1,126 @@
 import logo from '../assets/images/logo.svg';
 import '../assets/styles/App.css';
-//import { mojaVarijabla } from './utilities';
-//import Person from './utilities/person';
-//import {sum, pi, imeAplikacije as mojaVarijabla } from './utilities/utility';
-import randomstring from 'randomstring'; 
-import {mojaVarijabla, num1, num2, pi, Osoba, sum, oduzmi, } from './utilities'
+ 
+import randomstring from 'randomstring';
+import { broj1, broj2, Osoba, pi, imeAplikacije as mojaVarijabla, sum, oduzmi  } from './utilities';
+
+//import Osoba from './utilities/Person';
+//import { sum, pi, imeAplikacije as mojaVarijabla, num1 as broj1, num2 as broj2 } from './Utility';
 
 // 5.5
-import {Komponenta1} from './Komponenta1';
-import {Komponenta2} from './Komponenta2';
+import { Komponenta1 } from'./Komponenta1';
+import { Komponenta2 } from './Komponenta2';
 import Komponenta3 from './Komponenta3';
 
-//5.6
-import {GlavnaKomponenta} from './GlavnaKomponenta'
-
-//5.7 - import
+import { GlavnaKomponenta } from './GlavnaKomponenta';
+//import React from "react";
+import {WelcomeFunkcija} from './WelcomeFunkcija';
+import {WelcomeKlasa} from './WelcomeKlasa';
 import React from 'react';
 import KorisnikKlasa from './KorisnikKlasa';
 import KorisnikFunkcija from './KorisnikFunkcija';
-import KorisnikChild from './KorisnikChild';
-//5.7 
-// - funkcija
-function WelcomeFunkcija(){
-  return (
-    <h2>
-      Welcome! Komponenta definirana funkcijom!
-    </h2>
-  )
-}
-// - klasa
+import KorisnikDijete from './KorisnikDijete';
 
-// class WellcomeKlasa extends React.Component{
-//   render(){
-//     return(
-//       <h1> Welcome! komponenta definirana klasom.</h1>
-//     );
-//   }
+
+// function WelcomeFunkcija() {
+//   return (
+//     <h2>Welcome! Komponenta definirana funckijom.</h2>
+//   );
 // }
 
+// class WelcomeKlasa extends React.Component {
+//  render() {
+//    return (
+//     <h6>Welcome! Komponenta definirana klasom.</h6>
+//    );
+//  }
+// }
 
+function App() {
 
-class App extends React.Component {
-  
-  state = {
-    korisnici : [
-      {ime: "Marko", godine: 22},
+  const [korisnici, setKorisnici] = React.useState([
+      {ime: "Marko", godine: 27},
       {ime: "Katarina", godine: 21},
       {ime: "Nataša", godine: 20},
-      {ime: "Sunčica", godine: 7}
-  ],
-  dodatni_tekst : "Ona voli plivati"
-  };
-  
-  render(){
+      {ime: "Sunčica", godine: 5 }
+  ]);
 
-    const{korisnici, dodatni_tekst} =this.state
-
-  var prva ="PRVI TEKST";
-  var druga= "DRUGI TEXT"
-  var zbroj = sum(10, 12) * pi;
-
-  var rndStr = randomstring.generate({
-    length: 8,
-      
-  });
-  var od = oduzmi (num1, num2)
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Super fora aplikacija 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-
-        </a>
-        <p>
-        {mojaVarijabla}, {rndStr},  {Osoba.name}, <br />{zbroj}, Godine: {Osoba.godine}
-        <br />
-        <br />
-        oduzimanje {od}
-      </p>
-      </header>
-      <p>komponenta 1</p>
-      <Komponenta1/><br/>
-      <Komponenta2 podatak1={prva}/>
-      <Komponenta3 podatak1={prva} podatak2={druga}/>
-
-      <GlavnaKomponenta/>
-      
-      <WelcomeFunkcija/>
-      {/* <WellcomeKlasa/> */}
-      <KorisnikKlasa ime={korisnici[0].ime} godine={korisnici[0].godine}/>
-      <KorisnikKlasa ime={korisnici[1].ime} godine={korisnici[1].godine}/>
-      
-      <KorisnikFunkcija ime={korisnici[2].ime} godine={korisnici[2].godine}/>
-
-      <KorisnikChild ime = {korisnici[3].ime} godine={korisnici[3].godine} godina>
-        {dodatni_tekst}
-        </KorisnikChild> 
-
-      
-      </div>
+  const promijeniGodine = () => {
+    //console.log("kliknuli smo na button...");
+    //const {korisnici} = this.state;
+    const novikorisnici = korisnici.map(korisnik =>
+       {
+         return {...korisnik, godine: korisnik.godine + 1 }
+       }
       );
- } 
-}
+    setKorisnici(novikorisnici);
+  }
+
+  const promijeniIme = event => {
+    const novikorisnici = korisnici.map(korisnik =>
+      {
+        var rndName =randomstring.generate({
+          length: 10
+        });
+
+        return {...korisnik, ime: rndName   }
+      }
+     );
+    setKorisnici(novikorisnici);
+  }
+  
+    //const {korisnici, dodatni_tekst} = this.state;
+
+
+    var zbroj = sum(10, 12) * pi + (broj1 * broj2);
+    var rndStr =randomstring.generate({
+      length: 8
+    });
+    console.log("Random string = " + rndStr);
+    var od = oduzmi(broj2, broj1);
+    ////////
+    //5.5
+    var prva = "prvi-text";
+    var druga = "drugi-text";
+
+    //return (<Komponenta1/>);
+
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          
+          <p>
+          {mojaVarijabla}, {rndStr}, {Osoba.name}, Godine: {Osoba.godine}, {zbroj}, {od}
+          </p>
+          
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+            </a>
+        </header>
+        <Komponenta1/>
+        <Komponenta2 podatak1={prva}/>
+        <Komponenta3 podatak1={prva} podatak2={druga}/>
+
+        <GlavnaKomponenta/>
+        <WelcomeFunkcija />
+        <WelcomeKlasa/>
+
+        <KorisnikKlasa ime={korisnici[0].ime} godine={korisnici[0].godine} onButtonClick={promijeniGodine}/>
+        <KorisnikKlasa ime={korisnici[1].ime} godine={korisnici[1].godine} onButtonClick={promijeniGodine}/>
+        
+        <KorisnikFunkcija ime={korisnici[2].ime} godine={korisnici[2].godine} onNameChange={promijeniIme}/>
+
+        <KorisnikDijete ime={korisnici[3].ime} godine={korisnici[3].godine}>
+         Neki tekst
+        </KorisnikDijete>
+      </div>);
+  }
+
 
 export default App;

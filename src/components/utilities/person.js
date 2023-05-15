@@ -1,5 +1,6 @@
-const person = {
+const person = { 
     name: "Max",
-    godine: 33
+    godine: 20
 };
+
 export default person;

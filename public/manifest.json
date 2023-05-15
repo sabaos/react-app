@@ -1,6 +1,6 @@
 {
-  "short_name": "Moja react aplikacija",
-  "name": "Moja react aplikacija sa vježbi",
+  "short_name": "Moja React App",
+  "name": "React Aplikacija sa vjezbi",
   "icons": [
     {
       "src": "favicon.ico",

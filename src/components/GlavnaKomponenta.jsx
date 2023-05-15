@@ -1,9 +1,7 @@
 import { ConditionalRendering } from "./ConditionalRendering";
 
 export function GlavnaKomponenta(){
-    return(
-        <div>
-            Ispis nove komponente! <ConditionalRendering props={30}/>
-        </div>
-    )
+    return (
+        <div>Ispis glavne komponente <ConditionalRendering props={1}/> </div>
+    );
 }
