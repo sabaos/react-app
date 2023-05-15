@@ -8,7 +8,10 @@ import './index.css';
 // 5.14 - Forme 1
 //import App from './components/AppForme1';
 // 5.15 - Forme 2
-import AppForme2 from './components/AppForme2';
+//import AppForme2 from './components/AppForme2';
 
+//nasa API import
+import AppAPI from './components/utilities/AppAPI';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppForme2/>);
+//root.render(<AppForme2/>);
+root.render(<AppAPI/>);
