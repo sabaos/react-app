@@ -12,9 +12,21 @@ import './index.css';
 
 //nasa API import
 //import AppAPI from './components/utilities/AppAPI';
-import AppGraphQl from './components/AppGraphQl';
+//import AppGraphQl from './components/AppGraphQl';
+import AppRedux from './components/AppRedux';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { reducer } from './components/utilities/ReduxFunkcije';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<AppForme2/>);
 //root.render(<AppAPI/>);
-root.render(<AppGraphQl/>)
+//root.render(<AppGraphQl/>)
+
+
+const store = createStore(reducer);
+root.render(
+    <Provider store={store}>
+        <AppRedux/>
+    </Provider>
+)
